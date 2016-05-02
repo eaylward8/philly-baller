@@ -11,11 +11,14 @@ require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
-lb = User.create(first_name: "Larry", last_name: "Bird")
-mj = User.create(first_name: "Michael", last_name: "Jordan")
-sp = User.create(first_name: "Scottie", last_name: "Pippen")
-dr = User.create(first_name: "Dennis", last_name: "Rodman")
+g1 = Game.create(court_id: 1, datetime: "2016-05-03 12:00:00")
+
+mj = User.create(first_name: "Michael", last_name: "Jordan", skill_level: 5, email: "mj@gmail.com", password: "11111")
+sp = User.create(first_name: "Scottie", last_name: "Pippen", skill_level: 5, email: "scottie@gmail.com", password: "11111")
+ai = User.create(first_name: "Allen", last_name: "Iverson", skill_level: 5, email: "answer@gmail.com", password: "11111")
 
 mj.friends << sp
-mj.friends << dr
-sp.friends << dr
+
+mj.games << g1
+sp.games << g1
+ai.games << g1
