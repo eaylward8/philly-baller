@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
   resources :games
   resources :courts
+  resources :friendships
+  resources :users do 
+    get '/mygames', to: 'user_games#index', as: 'mygames'
+  end
+  resources :sessions, only: [:create]
   root 'pages#index'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :friendships
-  resources :users
-  resources :sessions, only: [:create]
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
