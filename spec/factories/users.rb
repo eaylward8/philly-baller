@@ -14,9 +14,10 @@
 
 FactoryGirl.define do
   factory :user do
-    first_name "MyString"
-    last_name "MyString"
-    skill_level 1
-    email "MyString"
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    skill_level { rand(1..5) }
+    email { Faker::Internet.email }
+    password '11111'
   end
 end

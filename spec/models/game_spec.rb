@@ -11,11 +11,17 @@
 #  description :string
 #
 
-class Game < ActiveRecord::Base
-  has_many :user_games
-  has_many :users, through: :user_games
-  belongs_to :court
+require 'rails_helper'
 
-  validates :date, :time, presence: true
+RSpec.describe Game, type: :model do
+  
+  describe 'factory' do 
+    it 'has a valid factory' do 
+      expect(build(:game)).to be_valid
+      binding.pry
+    end
+  end
+
+
 
 end

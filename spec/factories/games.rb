@@ -11,11 +11,11 @@
 #  description :string
 #
 
-class Game < ActiveRecord::Base
-  has_many :user_games
-  has_many :users, through: :user_games
-  belongs_to :court
 
-  validates :date, :time, presence: true
-
+FactoryGirl.define do
+  factory :game do
+    description { Faker::Lorem.sentence(3, true, 4) }
+    date { Faker::Time.between(7.days.ago, Date.today + 7) }
+    time { "#{rand(6..20)}:#{[0, 30].sample}" }
+  end
 end

@@ -11,7 +11,7 @@ require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
-g1 = Game.create(court_id: 1, datetime: "2016-05-03 12:00:00")
+g1 = Game.create(description: "Pickup", court_id: 1, date: "2016-05-03", time: "13:00")
 
 mj = User.create(first_name: "Michael", last_name: "Jordan", skill_level: 5, email: "mj@gmail.com", password: "11111")
 sp = User.create(first_name: "Scottie", last_name: "Pippen", skill_level: 5, email: "scottie@gmail.com", password: "11111")

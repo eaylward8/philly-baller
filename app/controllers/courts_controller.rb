@@ -1,5 +1,5 @@
 class CourtsController < ApplicationController
-  skip_before_action :authorized?, only: [:index]
+  skip_before_action :authorized?, only: [:index, :show]
 
   def index
     create_philly_courts_from_api if Court.all.count < 200
