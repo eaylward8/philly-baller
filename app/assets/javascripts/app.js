@@ -1,5 +1,7 @@
 $(function() {
-  
+  // $('#game_date').datepicker();
+  $('#game_time').timepicker({ 'scrollDefault': 'now', 'minTime': '6:00am', 'maxTime': '10:00pm' });
+
   // test to see if I can hit API
 
   // var data = {
@@ -20,6 +22,5 @@ $(function() {
   //       data.result.records[i].ASSET_NAME +
   //       '</li>');  
   //   }
-    
   // }); 
 })
