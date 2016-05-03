@@ -16,6 +16,6 @@ class Game < ActiveRecord::Base
   has_many :users, through: :user_games
   belongs_to :court
 
-  validates :date, :time, presence: true
+  validates :description, :date, :time, :court_id, presence: true
 
 end
