@@ -18,5 +18,11 @@ class User < ActiveRecord::Base
   has_many :user_games
   has_many :games, through: :user_games
   has_secure_password
+
+  validates :first_name, :last_name, :skill_level, :email, presence: true
+  validates :email, uniqueness: true
+  validates :skill_level, numericality: { only_integer: true, 
+                                        greater_than: 0, 
+                                        less_than_or_equal_to: 5 }
   
 end

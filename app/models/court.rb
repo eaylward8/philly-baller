@@ -14,4 +14,6 @@
 
 class Court < ActiveRecord::Base
   has_many :games
+  validates :name, :address, presence: true
+  validates :name, :address, uniqueness: true
 end
