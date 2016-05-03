@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  skip_before_action :authorized?, only: [:index, :show]
   def index
     @games = Game.all
   end
@@ -16,9 +17,10 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     binding.pry
     if @game.save
-      render "show"
+      current_user.games << @game
+      redirect_to game_path(@game)
     else
-      render "create"
+      render 'new'
     end
   end
 
