@@ -16,4 +16,8 @@ class Court < ActiveRecord::Base
   has_many :games
   validates :name, :address, presence: true
   validates :name, uniqueness: true
+
+  def self.sort_alphabetically
+    self.order(:name)
+  end
 end
