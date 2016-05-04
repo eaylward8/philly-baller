@@ -3,7 +3,7 @@ class CourtsController < ApplicationController
 
   def index
     create_philly_courts_from_api if Court.all.count < 200
-    @courts = Court.all
+    @courts = Court.sort_alphabetically
   end
 
   def show

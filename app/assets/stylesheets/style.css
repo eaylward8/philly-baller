@@ -1,7 +1,21 @@
+html, body {
+  height: 100%;
+}
+
 body {
   padding-top: 50px;
 }
 
 #main-nav {
   padding: 0 20px;
+}
+
+#court-select {
+  width: auto;
+}
+
+#map {
+  height: 430px;
+  width: auto;
+  /*margin: 40px;*/
 }

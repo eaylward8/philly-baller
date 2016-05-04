@@ -1,10 +1,10 @@
 <h1>New Game</h1>
 <%= form_for @game do |f| %>
-  <%= f.label :court %>
-  <%= f.collection_select(:court_id, Court.sort_alphabetically, :id, :name) %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <%= f.label :time %>
-  <%= f.text_field :time%>
-  <%= f.submit %>
+  <p><%= f.label :date %></p>
+  <p><%= f.date_field :date %></p>
+  <p><%= f.label :time %></p>
+  <p><%= f.text_field :time%></p>
+  <p><%= f.label :court %></p>
+  <p><%= f.collection_select(:court_id, Court.sort_alphabetically, :id, :name, {}, {class: "form-control", id: "court-select", size: 15}) %></p>
+  <p><%= f.submit %></p>
 <% end %>
