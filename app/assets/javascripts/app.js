@@ -18,7 +18,9 @@ $(function() {
       data: {id: court_id}
     }).success(function(data) {
       var address = data.address;
-      app.marker.controller.initMarker(address)
+      var site_name = data.site_name;
+      var location = address || site_name;
+      app.marker.controller.initMarker(location);
     });
   });
 })

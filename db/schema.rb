@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503174401) do
+ActiveRecord::Schema.define(version: 20160505185049) do
 
   create_table "courts", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160503174401) do
     t.string   "url"
     t.integer  "council_district"
     t.string   "pcpc_district"
+    t.string   "site_name"
   end
 
   create_table "friendships", force: :cascade do |t|

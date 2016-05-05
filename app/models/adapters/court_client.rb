@@ -12,16 +12,17 @@ module Adapters
         name = record["ASSET_NAME"]
         # skip the one record that is not a basketball court
         next if name.split(" ").include?("Handball")
-        address = record["ASSET_ADDR"]
+        address = record["ASSET_ADDR"].split(/[-]\d*/).join
+        site_name = record["SITE_NAME"]
         url = record["URL"]
         council_district = record["COUNCIL_DIST"]
         pcpc_district = record["PCPC_DIST"]
-        create_court(name, address, url, council_district, pcpc_district)
+        create_court(name, address, site_name, url, council_district, pcpc_district)
       end
     end
 
-    def self.create_court(name, address, url, council_district, pcpc_district)
-      Court.create(name: name, address: address, url: url, council_district: council_district, pcpc_district: pcpc_district)
+    def self.create_court(name, address, site_name, url, council_district, pcpc_district)
+      Court.create(name: name, address: address, site_name: site_name, url: url, council_district: council_district, pcpc_district: pcpc_district)
     end
   end
 end

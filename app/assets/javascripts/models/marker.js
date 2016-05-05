@@ -1,10 +1,10 @@
 app.marker.model = {
   all: [],
 
-  new: (function(map, location) {
+  new: (function(map, latLng) {
     new google.maps.Marker({
       map: map,
-      position: location
+      position: latLng
     });
   })
 } // ends marker model

@@ -1,12 +1,12 @@
 app.marker.controller = {
-  initMarker: (function(address) {
+  initMarker: (function(location) {
     var map = app.map.model.currentMap;
     var service = new google.maps.places.PlacesService(map);
-    service.textSearch({query: address}, function(results, status) {
-      var location = results[0].geometry.location;
-      map.setCenter(location);
+    service.textSearch({query: location}, function(results, status) {
+      var latLng = results[0].geometry.location;
+      map.setCenter(latLng);
       map.setZoom(17);
-      app.marker.model.new(map, location);
+      app.marker.model.new(map, latLng);
     });
   })
 }

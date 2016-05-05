@@ -21,7 +21,7 @@ class Court < ActiveRecord::Base
     self.order(:name)
   end
 
-  def full_address
-    self.address + ", Philadelphia, PA"
+  def full_address(address_or_site_name)
+    self.send(address_or_site_name) + ", Philadelphia, PA"
   end
 end
