@@ -20,4 +20,8 @@ class Court < ActiveRecord::Base
   def self.sort_alphabetically
     self.order(:name)
   end
+
+  def full_address
+    self.address + ", Philadelphia, PA"
+  end
 end
