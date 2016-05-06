@@ -1,3 +1,4 @@
-<h1>Game <%= @game.id %></h1>
+<h1><%= @game.description %></h1>
 <h2>Court: <%= @game.court.name %></h2>
 <h2>Address: <%= @game.court.address %></h2>
+<h2>Players: <%= @game.users.count %></h2>

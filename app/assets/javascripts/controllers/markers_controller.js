@@ -5,7 +5,7 @@ app.marker.controller = {
     service.textSearch({query: location}, function(results, status) {
       var latLng = results[0].geometry.location;
       map.setCenter(latLng);
-      map.setZoom(17);
+      map.setZoom(15);
       app.marker.model.new(map, latLng);
     });
   })

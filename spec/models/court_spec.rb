@@ -10,6 +10,7 @@
 #  url              :string
 #  council_district :integer
 #  pcpc_district    :string
+#  site_name        :string
 #
 
 require 'rails_helper'

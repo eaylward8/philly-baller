@@ -7,4 +7,4 @@ app.marker.model = {
       position: latLng
     });
   })
-} // ends marker model
+} // ends marker model8

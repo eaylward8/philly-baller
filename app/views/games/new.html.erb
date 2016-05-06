@@ -1,10 +1,26 @@
-<h1>New Game</h1>
-<%= form_for @game do |f| %>
-  <p><%= f.label :date %></p>
-  <p><%= f.date_field :date %></p>
-  <p><%= f.label :time %></p>
-  <p><%= f.text_field :time%></p>
-  <p><%= f.label :court %></p>
-  <p><%= f.collection_select(:court_id, Court.sort_alphabetically, :id, :name, {}, {class: "form-control", id: "court-select", size: 15}) %></p>
-  <p><%= f.submit %></p>
-<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>New Game</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <%= form_for @game do |f| %>
+      <p><%= f.label :description %>
+      <%= f.text_field :description %></p>
+      <p><%= f.label :date %>
+      <%= f.date_field :date %>
+      <%= f.label :time %>
+      <%= f.text_field :time%></p>
+      <p><%= f.label :court %></p>
+      <p><%= f.collection_select(:court_id, Court.sort_alphabetically, :id, :name, {}, {class: "form-control", id: "court-select", size: 15}) %></p>
+      <p><%= f.submit %></p>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <div id="map"></div>
+  </div>
+</div>
+
+
+
