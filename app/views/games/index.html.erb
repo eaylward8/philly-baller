@@ -1,6 +1,6 @@
-<h1>All Games</h1>
+<h1>Upcoming Games</h1>
 <ul>
-  <% @games.each do |game| %>
+  <% @upcoming_games.each do |game| %>
     <li><%= "Game #{game.id} - #{game.court.name}" %></li>
   <% end %>
 </ul>

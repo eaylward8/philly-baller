@@ -23,4 +23,10 @@ class Game < ActiveRecord::Base
     # inner join user_games on users.id = user_games.user_id 
     # where user_games.game_id = 1
   end
+
+  def self.upcoming_games
+    self.where(date: (Date.today..Date.today + 30))
+  end
+
+  
 end

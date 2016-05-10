@@ -2,7 +2,8 @@ class GamesController < ApplicationController
   skip_before_action :authorized?, only: [:index, :show]
   
   def index
-    @games = Game.all
+    # @games = Game.all
+    @upcoming_games = Game.upcoming_games
   end
 
   def show

@@ -1,6 +1,14 @@
 <h1>My Games</h1>
-<ul>
-  <% @user.games.each do |game| %>
-    <li><%= "Game #{game.id} - #{game.court.name} - #{game.date} - #{game.time}" %></li>
-  <% end %>
-</ul>
+<h2>Upcoming</h2>
+  <ul>
+    <% @upcoming_games.each do |game| %>
+      <li><%= "#{game.description} - #{game.court.name} - #{game.date} - #{game.time}" %></li>
+    <% end %>
+  </ul>
+
+<h2>Past</h2>
+  <ul>
+    <% @past_games.each do |game| %>
+      <li><%= "#{game.description} - #{game.court.name} - #{game.date} - #{game.time}" %></li>
+    <% end %>
+  </ul>

@@ -11,11 +11,11 @@ require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation, {except: %w[courts]}
 DatabaseCleaner.clean
 
-g1 = Game.create(description: "Friendly Pickup", court_id: 1, date: Date.today, time: "13:00")
+g1 = Game.create(description: "Pickup", court_id: 1, date: Date.today, time: "13:00")
 g2 = Game.create(description: "Streetball", court_id: 2, date: Date.today + 2, time: "18:30")
-g3 = Game.create(description: "Jail Ball", court_id: 3, date: Date.today + 7, time: "11:00")
+g3 = Game.create(description: "Late morning hoops", court_id: 3, date: Date.today + 7, time: "11:00")
 g4 = Game.create(description: "3v3 Half Court", court_id: 4, date: Date.today - 1, time: "9:30")
-g5 = Game.create(description: "Ball is Lyfe", court_id: 5, date: Date.today - 5, time: "20:00")
+g5 = Game.create(description: "Ball is Life", court_id: 5, date: Date.today - 5, time: "20:00")
 
 mj = User.create(first_name: "Michael", last_name: "Jordan", skill_level: 5, email: "mj@gmail.com", password: "11111")
 sp = User.create(first_name: "Scottie", last_name: "Pippen", skill_level: 5, email: "scottie@gmail.com", password: "11111")

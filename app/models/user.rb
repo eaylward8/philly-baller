@@ -24,5 +24,17 @@ class User < ActiveRecord::Base
   validates :skill_level, numericality: { only_integer: true, 
                                         greater_than: 0, 
                                         less_than_or_equal_to: 5 }
+
+  def order_by_date
+    self.games.order(:date)
+  end
+
+  def games_next_30_days
+    self.order_by_date.where(date: Date.today..Date.today + 30)
+  end
+
+  def games_past_30_days
+    self.order_by_date.where(date: Date.today - 30..Date.today - 1)
+  end
   
 end
