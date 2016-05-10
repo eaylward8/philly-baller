@@ -19,13 +19,20 @@ class Game < ActiveRecord::Base
   validates :description, :date, :time, :court_id, presence: true
 
   def avg_skill_level
-    # select users.last_name from users 
-    # inner join user_games on users.id = user_games.user_id 
-    # where user_games.game_id = 1
+    skill_sum = self.users.pluck(:skill_level).reduce(:+).to_f
+    (skill_sum / num_players).round(1)
   end
 
   def self.upcoming_games
     self.where(date: (Date.today..Date.today + 30))
+  end
+
+  def num_players
+    self.users.count
+  end
+
+  def formatted_time
+    self.time.strftime('%l:%M %P')
   end
 
   

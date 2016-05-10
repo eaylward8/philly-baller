@@ -1,6 +1,27 @@
 <h1>Upcoming Games</h1>
-<ul>
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Description</th>
+    <th>Court</th>
+    <th>Players</th>
+    <th>Avg Skill Level</th>
+    <th>Going?</th>
+  </tr>
   <% @upcoming_games.each do |game| %>
-    <li><%= "Game #{game.id} - #{game.court.name}" %></li>
+    <tr>
+      <td><%= game.date.strftime('%b %d') %></td>
+      <td><%= game.formatted_time %></td>
+      <td><%= game.description %></td>
+      <td><%= game.court.name %></td>
+      <td><%= game.num_players %></td>
+      <td><%= game.avg_skill_level %></td>
+      <td>Sign Up</td>
+    </tr>
   <% end %>
-</ul>
+  
+</table>
+
+
