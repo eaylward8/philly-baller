@@ -1,14 +1,67 @@
-<h1>My Games</h1>
-<h2>Upcoming</h2>
-  <ul>
-    <% @upcoming_games.each do |game| %>
-      <li><%= "#{game.description} - #{game.court.name} - #{game.date} - #{game.time}" %></li>
-    <% end %>
-  </ul>
+<div class="row">
+  <div class="col-md-11 col-md-offset-1">
+    <h1>My Games</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-11 col-md-offset-1">
+    <h1>Upcoming</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-striped">
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Description</th>
+        <th>Court</th>
+        <th>Players</th>
+        <th>Avg Skill Level</th>
+        <th>Going?</th>
+      </tr>
+      <% @upcoming_games.each do |game| %>
+        <tr>
+          <td><%= game.date.strftime('%b %d') %></td>
+          <td><%= game.formatted_time %></td>
+          <td><%= game.description %></td>
+          <td><%= game.court.name %></td>
+          <td><%= game.num_players %></td>
+          <td><%= game.avg_skill_level %></td>
+          <td>Decommit</td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
-<h2>Past</h2>
-  <ul>
-    <% @past_games.each do |game| %>
-      <li><%= "#{game.description} - #{game.court.name} - #{game.date} - #{game.time}" %></li>
-    <% end %>
-  </ul>
+<div class="row">
+  <div class="col-md-11 col-md-offset-1">
+    <h1>Past</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-striped">
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Description</th>
+        <th>Court</th>
+        <th>Players</th>
+        <th>Avg Skill Level</th>
+      </tr>
+      <% @upcoming_games.each do |game| %>
+        <tr>
+          <td><%= game.date.strftime('%b %d') %></td>
+          <td><%= game.formatted_time %></td>
+          <td><%= game.description %></td>
+          <td><%= game.court.name %></td>
+          <td><%= game.num_players %></td>
+          <td><%= game.avg_skill_level %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+

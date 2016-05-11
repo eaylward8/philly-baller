@@ -1,27 +1,34 @@
-<h1>Upcoming Games</h1>
-
-<table class="table table-striped">
-  <tr>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Description</th>
-    <th>Court</th>
-    <th>Players</th>
-    <th>Avg Skill Level</th>
-    <th>Going?</th>
-  </tr>
-  <% @upcoming_games.each do |game| %>
-    <tr>
-      <td><%= game.date.strftime('%b %d') %></td>
-      <td><%= game.formatted_time %></td>
-      <td><%= game.description %></td>
-      <td><%= game.court.name %></td>
-      <td><%= game.num_players %></td>
-      <td><%= game.avg_skill_level %></td>
-      <td>Sign Up</td>
-    </tr>
-  <% end %>
-  
-</table>
+<div class="row">
+  <div class="col-md-11 col-md-offset-1">
+    <h1>Upcoming Games</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-striped">
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Description</th>
+        <th>Court</th>
+        <th>Players</th>
+        <th>Avg Skill Level</th>
+        <th>Going?</th>
+      </tr>
+      <% @upcoming_games.each do |game| %>
+        <tr>
+          <td><%= game.date.strftime('%b %d') %></td>
+          <td><%= game.formatted_time %></td>
+          <td><%= game.description %></td>
+          <td><%= game.court.name %></td>
+          <td><%= game.num_players %></td>
+          <td><%= game.avg_skill_level %></td>
+          <td>Sign Up</td>
+        </tr>
+      <% end %>
+      
+    </table>
+  </div>
+</div>
 
 

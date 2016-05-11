@@ -24,7 +24,7 @@ class Game < ActiveRecord::Base
   end
 
   def self.upcoming_games
-    self.where(date: (Date.today..Date.today + 30))
+    self.where(date: (Date.today..Date.today + 30)).order(:date).order(:time)
   end
 
   def num_players
